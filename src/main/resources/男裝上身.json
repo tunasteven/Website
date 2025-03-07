@@ -1,0 +1,281 @@
+[
+  {
+    "id": 1,
+    "name": "Jersey Crewneck Tee",
+    "description": "The Essentials Tee is made from core 100% cotton jersey. The rib-knit crewneck tee fits relaxed in the body with dropped shoulders. The \"Fear of God Essentials\" collegiate graphic is screen printed on the center front, and Essentials Fear of God rubberized label is at the back collar.",
+    "price": 2175,
+    "color": "BLACK",
+    "imageUrls": [
+      "https://via.placeholder.com/300x400.png?text=Jersey+Crewneck+Tee+Black+1",
+      "https://via.placeholder.com/300x400.png?text=Jersey+Crewneck+Tee+Black+2",
+      "https://via.placeholder.com/300x400.png?text=Jersey+Crewneck+Tee+Black+3"
+    ],
+    "category": "Men's Tops",
+    "sizes": [
+      {
+        "size": "S",
+        "quantity": 20
+      },
+      {
+        "size": "M",
+        "quantity": 20
+      },
+      {
+        "size": "L",
+        "quantity": 20
+      },
+      {
+        "size": "XL",
+        "quantity": 20
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Jersey Crewneck Tee",
+    "description": "The Essentials Tee is made from core 100% cotton jersey. The rib-knit crewneck tee fits relaxed in the body with dropped shoulders. The \"Fear of God Essentials\" collegiate graphic is screen printed on the center front, and Essentials Fear of God rubberized label is at the back collar.",
+    "price": 2175,
+    "color": "DARK HEATHER",
+    "imageUrls": [
+      "https://via.placeholder.com/300x400.png?text=Jersey+Crewneck+Tee+Dark+Heather+1",
+      "https://via.placeholder.com/300x400.png?text=Jersey+Crewneck+Tee+Dark+Heather+2",
+      "https://via.placeholder.com/300x400.png?text=Jersey+Crewneck+Tee+Dark+Heather+3"
+    ],
+    "category": "Men's Tops",
+    "sizes": [
+      {
+        "size": "S",
+        "quantity": 20
+      },
+      {
+        "size": "M",
+        "quantity": 20
+      },
+      {
+        "size": "L",
+        "quantity": 20
+      },
+      {
+        "size": "XL",
+        "quantity": 20
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Jersey Crewneck Tee",
+    "description": "The Essentials Tee is made from core 100% cotton jersey. The rib-knit crewneck tee fits relaxed in the body with dropped shoulders. The \"Fear of God Essentials\" collegiate graphic is screen printed on the center front, and Essentials Fear of God rubberized label is at the back collar.",
+    "price": 2175,
+    "color": "MILITARY",
+    "imageUrls": [
+      "https://via.placeholder.com/300x400.png?text=Jersey+Crewneck+Tee+Military+1",
+      "https://via.placeholder.com/300x400.png?text=Jersey+Crewneck+Tee+Military+2",
+      "https://via.placeholder.com/300x400.png?text=Jersey+Crewneck+Tee+Military+3"
+    ],
+    "category": "Men's Tops",
+    "sizes": [
+      {
+        "size": "S",
+        "quantity": 20
+      },
+      {
+        "size": "M",
+        "quantity": 20
+      },
+      {
+        "size": "L",
+        "quantity": 20
+      },
+      {
+        "size": "XL",
+        "quantity": 20
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Fleece Hoodie",
+    "description": "The Essentials Fleece Hoodie has been upgraded in a heavier 480gsm core fleece to provide additional body and structure. A collegiate-inspired \"Fear of God Essentials\" graphic is screen printed on the front. Details include an overlapped neckline hoodie, rib-knit cuffs, waist-hem, and side pockets. The Essentials Fear of God rubberized label is at the back collar.",
+    "price": 4707,
+    "color": "BLACK",
+    "imageUrls": [
+      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Black+1",
+      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Black+2",
+      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Black+3"
+    ],
+    "category": "Men's Tops",
+    "sizes": [
+      {
+        "size": "S",
+        "quantity": 20
+      },
+      {
+        "size": "M",
+        "quantity": 20
+      },
+      {
+        "size": "L",
+        "quantity": 20
+      },
+      {
+        "size": "XL",
+        "quantity": 20
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Fleece Hoodie",
+    "description": "The Essentials Fleece Hoodie has been upgraded in a heavier 480gsm core fleece to provide additional body and structure. A collegiate-inspired \"Fear of God Essentials\" graphic is screen printed on the front. Details include an overlapped neckline hoodie, rib-knit cuffs, waist-hem, and side pockets. The Essentials Fear of God rubberized label is at the back collar.",
+    "price": 4707,
+    "color": "DARK HEATHER",
+    "imageUrls": [
+      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Dark+Heather+1",
+      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Dark+Heather+2",
+      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Dark+Heather+3",
+      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Dark+Heather+4"
+    ],
+    "category": "Men's Tops",
+    "sizes": [
+      {
+        "size": "S",
+        "quantity": 20
+      },
+      {
+        "size": "M",
+        "quantity": 20
+      },
+      {
+        "size": "L",
+        "quantity": 20
+      },
+      {
+        "size": "XL",
+        "quantity": 20
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Fleece Hoodie",
+    "description": "The Essentials Fleece Hoodie has been upgraded in a heavier 480gsm core fleece to provide additional body and structure. A collegiate-inspired \"Fear of God Essentials\" graphic is screen printed on the front. Details include an overlapped neckline hoodie, rib-knit cuffs, waist-hem, and side pockets. The Essentials Fear of God rubberized label is at the back collar.",
+    "price": 4707,
+    "color": "OLIVE",
+    "imageUrls": [
+      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Olive+1",
+      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Olive+2",
+      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Olive+3",
+      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Olive+4",
+      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Olive+5"
+    ],
+    "category": "Men's Tops",
+    "sizes": [
+      {
+        "size": "S",
+        "quantity": 20
+      },
+      {
+        "size": "M",
+        "quantity": 20
+      },
+      {
+        "size": "L",
+        "quantity": 20
+      },
+      {
+        "size": "XL",
+        "quantity": 20
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Jersey Long Sleeve Tee",
+    "description": "The Essentials Long Sleeve Tee is made from core 100% cotton jersey. The crewneck tee fits relaxed in the body with dropped shoulders, and rib-knit cuffs. The \"Fear of God Essentials\" collegiate graphic is screen printed on the center front, and the Essentials Fear of God rubberized label is at the back collar.",
+    "price": 2354,
+    "color": "BLACK",
+    "imageUrls": [
+      "https://via.placeholder.com/300x400.png?text=Jersey+Long+Sleeve+Tee+Black+1",
+      "https://via.placeholder.com/300x400.png?text=Jersey+Long+Sleeve+Tee+Black+2"
+    ],
+    "category": "Men's Tops",
+    "sizes": [
+      {
+        "size": "S",
+        "quantity": 20
+      },
+      {
+        "size": "M",
+        "quantity": 20
+      },
+      {
+        "size": "L",
+        "quantity": 20
+      },
+      {
+        "size": "XL",
+        "quantity": 20
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Cargo Pants",
+    "description": "Essentials Cargo Pants feature a relaxed fit with a durable cotton fabric. Designed with side pockets and a rubberized label at the waist, they offer comfort and utility for daily wear.",
+    "price": 2985,
+    "color": "NAVY",
+    "imageUrls": [
+      "https://via.placeholder.com/300x400.png?text=Cargo+Pants+Navy+1",
+      "https://via.placeholder.com/300x400.png?text=Cargo+Pants+Navy+2"
+    ],
+    "category": "Men's Bottoms",
+    "sizes": [
+      {
+        "size": "S",
+        "quantity": 20
+      },
+      {
+        "size": "M",
+        "quantity": 20
+      },
+      {
+        "size": "L",
+        "quantity": 20
+      },
+      {
+        "size": "XL",
+        "quantity": 20
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Slim Fit Jeans",
+    "description": "Slim Fit Jeans are designed for a streamlined look, crafted from high-quality denim with a touch of stretch for all-day comfort. They feature five pockets, a zip fly, and a leather patch on the waistband.",
+    "price": 3205,
+    "color": "DENIM",
+    "imageUrls": [
+      "https://via.placeholder.com/300x400.png?text=Slim+Fit+Jeans+Denim+1",
+      "https://via.placeholder.com/300x400.png?text=Slim+Fit+Jeans+Denim+2"
+    ],
+    "category": "Men's Bottoms",
+    "sizes": [
+      {
+        "size": "S",
+        "quantity": 20
+      },
+      {
+        "size": "M",
+        "quantity": 20
+      },
+      {
+        "size": "L",
+        "quantity": 20
+      },
+      {
+        "size": "XL",
+        "quantity": 20
+      }
+    ]
+  }
+]
