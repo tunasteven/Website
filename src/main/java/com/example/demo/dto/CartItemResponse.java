@@ -1,10 +1,14 @@
 package com.example.demo.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class CartItemResponse {
     private Long cartItemId; // 購物車項目的 ID
     private Long productId;  // 產品的 ID
@@ -13,4 +17,5 @@ public class CartItemResponse {
     private BigDecimal price;
     private String size; // 只回傳購物車中選擇的尺寸
     private BigDecimal totalPrice; // 用於存儲該項目的總價
+    private String imageUrl; // 新增圖片欄位
 }

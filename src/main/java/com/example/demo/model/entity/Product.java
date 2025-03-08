@@ -1,7 +1,6 @@
 package com.example.demo.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -39,7 +38,6 @@ public class Product {
     @ElementCollection
     @CollectionTable(name = "product_sizes", joinColumns = @JoinColumn(name = "product_id"))
     @Column(name = "size")
-    @JsonIgnore // 使用此註解來防止 sizes 被序列化
     private List<Size> sizes;
 
     @Embeddable

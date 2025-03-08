@@ -32,6 +32,7 @@ public class CartItem {
     private BigDecimal price = BigDecimal.ZERO;
 
     private String size;
+    private String imageUrl; // ✅ 新增圖片欄位
 
     public BigDecimal getTotalPrice() {
         System.out.println("Calculating total price for CartItem ID: " + this.id + ", Quantity: " + quantity);

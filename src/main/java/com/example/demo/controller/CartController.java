@@ -1,10 +1,8 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.CartItemResponse;
 import com.example.demo.dto.CartResponse;
 import com.example.demo.dto.ProductDTO;
 import com.example.demo.exception.ProductNotFoundException;
-import com.example.demo.model.entity.Cart;
 import com.example.demo.model.entity.User;
 import com.example.demo.service.CartService;
 import com.example.demo.service.ProductService;
@@ -15,8 +13,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/cart")
@@ -37,84 +33,39 @@ public class CartController {
     public ResponseEntity<CartResponse> getCart() {
         String username = getCurrentUsername();
         User user = userService.findByEmail(username);
-        Cart cart = cartService.getCartByUser(user);
-
-        System.out.println("Cart ID: " + cart.getId()); // 調試輸出購物車ID
-
-        CartResponse cartResponse = new CartResponse();
-        cartResponse.setCartId(cart.getId());  // 設置購物車 ID
-        cartResponse.setItems(cart.getItems().stream()
-                .map(cartItem -> {
-                    System.out.println("CartItem ID: " + cartItem.getId()); // 調試輸出購物車項目ID
-                    System.out.println("Product ID: " + cartItem.getProduct().getId()); // 調試輸出產品ID
-
-
-                    CartItemResponse itemDTO = new CartItemResponse();
-                    itemDTO.setCartItemId(cartItem.getId());  // 設置購物車項目的 ID
-                    itemDTO.setProductId(cartItem.getProduct().getId());  // 設置產品 ID
-                    itemDTO.setProductName(cartItem.getProduct().getName());  // 設置產品名稱
-                    itemDTO.setPrice(cartItem.getPrice());  // 設置價格
-                    itemDTO.setQuantity(cartItem.getQuantity());  // 設置數量
-                    itemDTO.setSize(cartItem.getSize());  // 設置尺寸
-                    itemDTO.setTotalPrice(cartItem.getTotalPrice());  // 設置總價
-                    return itemDTO;
-                })
-                .collect(Collectors.toList()));
+        CartResponse cartResponse = cartService.getCartByUser(user); // ✅ 直接讓 service 回傳 DTO
 
         return ResponseEntity.ok(cartResponse);
     }
 
     @PostMapping("/add")
-    public ResponseEntity<CartResponse> addProductToCart(@RequestParam Long productId,
-                                                         @RequestParam int quantity,
-                                                         @RequestParam String size) {
-        // 紀錄進入方法的日誌
+    public ResponseEntity<CartResponse> addProductToCart(
+            @RequestParam Long productId,
+            @RequestParam int quantity,
+            @RequestParam String size) {
+
         System.out.println("Adding product to cart. Product ID: " + productId + ", Quantity: " + quantity + ", Size: " + size);
 
         String username = getCurrentUsername();
         User user = userService.findByEmail(username);
 
-        // 確認 User 對象
-        System.out.println("User found: " + user.getId() + ", Username: " + user.getUsername());
-
         ProductDTO product = productService.getProductById(productId)
                 .orElseThrow(() -> new ProductNotFoundException("Product not found"));
 
-        Cart updatedCart = cartService.addProductToCart(user, product, quantity, size);
+        CartResponse updatedCart = cartService.addProductToCart(user, product, quantity, size); // ✅ 讓 service 回傳 DTO
 
-        // 確認更新後的 Cart 對象
-        System.out.println("Cart updated with ID: " + updatedCart.getId());
-
-        // 確認 Cart 內容
-        updatedCart.getItems().forEach(item ->
-                System.out.println("CartItem ID: " + item.getId() + ", Product ID: " + item.getProduct().getId())
-        );
-
-        // 轉換成 DTO 並返回
-        CartResponse cartResponse = new CartResponse();
-        cartResponse.setCartId(updatedCart.getId());
-        cartResponse.setItems(updatedCart.getItems().stream()
-                .map(cartItem -> {
-                    CartItemResponse itemDTO = new CartItemResponse();
-                    itemDTO.setCartItemId(cartItem.getId());
-                    itemDTO.setProductId(cartItem.getProduct().getId());
-                    itemDTO.setProductName(cartItem.getProduct().getName());
-                    itemDTO.setQuantity(cartItem.getQuantity());
-                    itemDTO.setPrice(cartItem.getPrice());
-                    itemDTO.setSize(cartItem.getSize());
-                    itemDTO.setTotalPrice(cartItem.getTotalPrice());
-                    return itemDTO;
-                }).collect(Collectors.toList()));
-
-        return ResponseEntity.ok(cartResponse);
+        return ResponseEntity.ok(updatedCart);
     }
 
     @PutMapping("/update")
-    public ResponseEntity<Cart> updateCartItem(@RequestParam Long cartItemId, @RequestParam int quantity) {
+    public ResponseEntity<CartResponse> updateCartItem(
+            @RequestParam Long cartItemId,
+            @RequestParam int quantity) {
+
         String username = getCurrentUsername();
         User user = userService.findByEmail(username);
 
-        Cart updatedCart = cartService.updateCartItem(user, cartItemId, quantity);
+        CartResponse updatedCart = cartService.updateCartItem(user, cartItemId, quantity); // ✅ 修改回傳 DTO
         return ResponseEntity.ok(updatedCart);
     }
 
