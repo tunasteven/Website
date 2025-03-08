@@ -1,5 +1,6 @@
 package com.example.demo.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,5 +19,7 @@ public class ProductDTO {
     private String color;
     private List<String> imageUrls;
     private String category;
-    private List<String> availableSizes; // 用來存放可用尺寸
+    @JsonProperty("sizes")
+    private List<SizeDTO> sizes; // 改為包含 size 和 quantity 的 SizeDTO
 }
+

@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.dto.ProductDTO;
+import com.example.demo.dto.SizeDTO;
 import com.example.demo.model.entity.Product;
 import com.example.demo.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,8 +67,8 @@ public class ProductService {
 
     // **將 Product 轉換為 ProductDTO**
     private ProductDTO convertToDTO(Product product) {
-        List<String> availableSizes = product.getSizes().stream()
-                .map(size -> size.getSize())
+        List<SizeDTO> availableSizes = product.getSizes().stream()
+                .map(size -> new SizeDTO(size.getSize(), size.getQuantity())) // 轉換為 SizeDTO
                 .collect(Collectors.toList());
 
         return new ProductDTO(
@@ -78,7 +79,7 @@ public class ProductService {
                 product.getColor(),
                 product.getImageUrls(),
                 product.getCategory(),
-                availableSizes
+                availableSizes // 設置為 SizeDTO 列表
         );
     }
 }
