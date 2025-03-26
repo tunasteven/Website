@@ -5,6 +5,7 @@ import com.example.demo.util.JwtAuthenticationEntryPoint;
 import com.example.demo.util.JwtRequestFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -45,6 +46,8 @@ public class SecurityConfig {
                                 .requestMatchers("/auth/**").permitAll() // 設定 /auth/** 路徑可以匿名訪問
                                 .requestMatchers("/api/admin/**").hasRole("ADMIN") // 設定 /api/admin/** 路徑需具有 ADMIN 角色
                                 .requestMatchers("/api/user/**").hasAnyRole("USER", "ADMIN") // 設定 /api/user/** 路徑需具有 USER 或 ADMIN 角色
+                                .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()  // 允許 OPTIONS 請求
+                                .requestMatchers("/auth/register").permitAll()
                                 .anyRequest().authenticated() // 其他所有請求需要驗證
                 )
                 // 配置例外處理（如未認證時的處理邏輯）
