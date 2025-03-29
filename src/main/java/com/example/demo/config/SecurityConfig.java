@@ -15,6 +15,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
+
+import java.util.List;
 
 @Configuration
 @EnableWebSecurity
@@ -39,7 +44,7 @@ public class SecurityConfig {
                 // 禁用 CSRF 保護，因為我們使用的是 JWT（無狀態認證）
                 .csrf(csrf -> csrf.disable())
                 // 啟用 CORS 支援
-                .cors(cors -> cors.configure(http))
+                .cors(cors -> cors.disable()) // 不要讓 Spring Security 自己配置，因為我們已經有 CorsFilter 了
                 // 配置授權規則
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
@@ -63,7 +68,23 @@ public class SecurityConfig {
 
         return http.build(); // 建構並返回 SecurityFilterChain
     }
+    @Configuration
+    public class CorsConfig {
 
+        @Bean
+        public CorsFilter corsFilter() {
+            CorsConfiguration config = new CorsConfiguration();
+            config.setAllowCredentials(true); // 允許攜帶 Cookie
+            config.setAllowedOrigins(List.of("http://localhost:8080", "http://127.0.0.1:5501")); // 允許的前端網域
+            config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS")); // 允許的 HTTP 方法
+            config.setAllowedHeaders(List.of("Authorization", "Content-Type")); // 允許的 Header
+            config.setExposedHeaders(List.of("Authorization")); // 允許客戶端讀取的 Header
+
+            UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+            source.registerCorsConfiguration("/**", config);
+            return new CorsFilter(source);
+        }
+    }
     // 密碼編碼器 Bean，用於加密和驗證用戶密碼
     @Bean
     public PasswordEncoder passwordEncoder() {
