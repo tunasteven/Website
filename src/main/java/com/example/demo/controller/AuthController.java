@@ -7,6 +7,8 @@ import com.example.demo.model.entity.User;
 import com.example.demo.service.CustomUserDetailsService;
 import com.example.demo.service.UserService;
 import com.example.demo.util.JwtTokenUtil;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -62,6 +64,8 @@ public class AuthController {
     }
 
     // JWT 認證回應
+    @Setter
+    @Getter
     public static class AuthResponse {
         private String token;
 
@@ -69,16 +73,11 @@ public class AuthController {
             this.token = token;
         }
 
-        public String getToken() {
-            return token;
-        }
-
-        public void setToken(String token) {
-            this.token = token;
-        }
     }
 
     // 註冊回應
+    @Setter
+    @Getter
     public static class RegisterResponse {
         private Long userId;
         private String message;
@@ -88,21 +87,6 @@ public class AuthController {
             this.message = message;
         }
 
-        public Long getUserId() {
-            return userId;
-        }
-
-        public void setUserId(Long userId) {
-            this.userId = userId;
-        }
-
-        public String getMessage() {
-            return message;
-        }
-
-        public void setMessage(String message) {
-            this.message = message;
-        }
     }
 }
 
