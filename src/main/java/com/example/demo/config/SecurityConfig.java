@@ -16,8 +16,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.filter.CorsFilter;
 
 import java.util.List;
 
@@ -25,11 +25,8 @@ import java.util.List;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    // 自定義的用戶詳情服務
     private final CustomUserDetailsService userDetailsService;
-    // JWT 請求過濾器
     private final JwtRequestFilter jwtRequestFilter;
-    // JWT 認證入口點
     private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
 
     public SecurityConfig(CustomUserDetailsService userDetailsService, JwtRequestFilter jwtRequestFilter, JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint) {
@@ -41,57 +38,50 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                // 禁用 CSRF 保護，因為我們使用的是 JWT（無狀態認證）
                 .csrf(csrf -> csrf.disable())
-                // 啟用 CORS 支援
-                .cors(cors -> cors.disable()) // 不要讓 Spring Security 自己配置，因為我們已經有 CorsFilter 了
-                // 配置授權規則
+                .cors(cors -> cors.configurationSource(corsConfigurationSource())) // **這裡改用 corsConfigurationSource()**
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
-                                .requestMatchers("/auth/**").permitAll() // 設定 /auth/** 路徑可以匿名訪問
-                                .requestMatchers("/api/admin/**").hasRole("ADMIN") // 設定 /api/admin/** 路徑需具有 ADMIN 角色
-                                .requestMatchers("/api/user/**").hasAnyRole("USER", "ADMIN") // 設定 /api/user/** 路徑需具有 USER 或 ADMIN 角色
-                                .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()  // 允許 OPTIONS 請求
+                                .requestMatchers("/auth/**").permitAll()
+                                .requestMatchers("/api/admin/**").hasRole("ADMIN")
+                                .requestMatchers("/api/user/**").hasAnyRole("USER", "ADMIN")
+                                .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                                 .requestMatchers("/auth/register").permitAll()
-                                .anyRequest().authenticated() // 其他所有請求需要驗證
+                                .requestMatchers("/images/**").permitAll() // ✅ 放行圖片
+                                .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll() //swagger
+                                .anyRequest().authenticated()
                 )
-                // 配置例外處理（如未認證時的處理邏輯）
                 .exceptionHandling(exceptionHandling ->
-                        exceptionHandling.authenticationEntryPoint(jwtAuthenticationEntryPoint) // 使用自定義的 JWT 認證入口點
+                        exceptionHandling.authenticationEntryPoint(jwtAuthenticationEntryPoint)
                 )
-                // 設定會話管理為無狀態（STATELESS）
                 .sessionManagement(sessionManagement ->
                         sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
-                // 在 UsernamePasswordAuthenticationFilter 執行之前添加自定義的 JWT 請求過濾器
                 .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 
-        return http.build(); // 建構並返回 SecurityFilterChain
+        return http.build();
     }
-    @Configuration
-    public class CorsConfig {
 
-        @Bean
-        public CorsFilter corsFilter() {
-            CorsConfiguration config = new CorsConfiguration();
-            config.setAllowCredentials(true); // 允許攜帶 Cookie
-            config.setAllowedOrigins(List.of("http://localhost:8080", "http://127.0.0.1:5501")); // 允許的前端網域
-            config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS")); // 允許的 HTTP 方法
-            config.setAllowedHeaders(List.of("Authorization", "Content-Type")); // 允許的 Header
-            config.setExposedHeaders(List.of("Authorization")); // 允許客戶端讀取的 Header
+    // **全局 CORS 配置**
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration config = new CorsConfiguration();
+        config.setAllowCredentials(true);
+        config.setAllowedOrigins(List.of("http://localhost:8080", "http://127.0.0.1:5501")); // 允許的前端網址
+        config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        config.setAllowedHeaders(List.of("Authorization", "Content-Type"));
+        config.setExposedHeaders(List.of("Authorization"));
 
-            UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-            source.registerCorsConfiguration("/**", config);
-            return new CorsFilter(source);
-        }
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", config);
+        return source;
     }
-    // 密碼編碼器 Bean，用於加密和驗證用戶密碼
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-    // 認證管理器 Bean，用於處理用戶認證邏輯
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         return authenticationConfiguration.getAuthenticationManager();

@@ -4,6 +4,7 @@ import com.example.demo.dto.OrderDTO;
 import com.example.demo.dto.OrderItemDTO;
 import com.example.demo.model.entity.Order;
 import com.example.demo.model.entity.OrderItem;
+import com.example.demo.model.entity.User;
 import com.example.demo.repository.OrderRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,12 @@ public class OrderService {
     public OrderService(JdbcTemplate jdbcTemplate, OrderRepository orderRepository) {
         this.jdbcTemplate = jdbcTemplate;
         this.orderRepository = orderRepository;
+    }
+    public List<OrderDTO> getOrdersForUser(User user) {
+        List<Order> orders = orderRepository.findByUser(user);
+        return orders.stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
     }
 
     // 重設 order 和 order_item 表的 ID

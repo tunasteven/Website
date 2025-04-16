@@ -121,6 +121,7 @@ public class CartService {
 
         return new CartResponse(cart.getId(), items);
     }
+    @Transactional
     public OrderDTO convertCartToOrder(User user, Address shippingAddress, PaymentMethod paymentMethod) {
         Cart cart = cartRepository.findByUser(user);
         if (cart == null || cart.getItems().isEmpty()) {
@@ -152,6 +153,12 @@ public class CartService {
         // ✅ 轉換 `Order` 為 `OrderDTO`，直接回傳
         return orderService.convertToDTO(savedOrder);
     }
+    @Transactional
+    public void clearCart(User user) {
+        // 清空該使用者的購物車邏輯
+        cartRepository.deleteByUser(user);
+    }
+
 
     // ✅ 刪除購物車中的商品
     @Transactional
@@ -191,6 +198,9 @@ public class CartService {
         } catch (Exception e) {
             throw new RuntimeException("清空購物車失敗", e);
         }
+
     }
+
+
 
 }

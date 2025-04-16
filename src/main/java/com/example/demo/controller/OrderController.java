@@ -12,6 +12,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/orders")
 public class OrderController {
@@ -27,6 +29,14 @@ public class OrderController {
         this.userService = userService;
     }
 
+    // ✅ 查詢目前登入使用者的所有訂單
+    @GetMapping
+    public ResponseEntity<List<OrderDTO>> getOrdersForCurrentUser() {
+        User currentUser = getCurrentUser();
+        List<OrderDTO> orders = orderService.getOrdersForUser(currentUser);
+        return ResponseEntity.ok(orders);
+    }
+
     // ✅ 確認訂單
     @PostMapping("/confirm")
     public ResponseEntity<OrderDTO> confirmOrder(@RequestBody OrderRequest orderRequest) {
@@ -39,6 +49,9 @@ public class OrderController {
 
         // ✅ 直接轉換購物車為 `OrderDTO`（避免先回傳 `Order` 再轉換）
         OrderDTO orderDTO = cartService.convertCartToOrder(currentUser, orderRequest.getShippingAddress(), orderRequest.getPaymentMethod());
+
+        // ✅ 清空購物車
+        cartService.clearCart(currentUser);
 
         return ResponseEntity.ok(orderDTO);
     }
@@ -59,4 +72,5 @@ public class OrderController {
             throw new IllegalStateException("未驗證的用戶");
         }
     }
+
 }

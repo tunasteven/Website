@@ -1,28 +1,29 @@
 [
   {
     "id": 1,
-    "name": "Jersey Crewneck Tee",
-    "description": "The Essentials Tee is made from core 100% cotton jersey. The rib-knit crewneck tee fits relaxed in the body with dropped shoulders. The \"Fear of God Essentials\" collegiate graphic is screen printed on the center front, and Essentials Fear of God rubberized label is at the back collar.",
-    "price": 2175,
-    "color": "BLACK",
+    "name": "Eternal Knit Tee",
+    "description": "Made in Italy, the Eternal Knit Tee is made from a 100% virgin wool, and detailed with a jacquard \"ETERNAL\" logo. The design features a crew neckline with volume in the body and 3/4 sleeves. A Fear of God label is stitched at the back collar.",
+    "price": 5154,
+    "color": "Off White",
     "imageUrls": [
-      "https://via.placeholder.com/300x400.png?text=Jersey+Crewneck+Tee+Black+1",
-      "https://via.placeholder.com/300x400.png?text=Jersey+Crewneck+Tee+Black+2",
-      "https://via.placeholder.com/300x400.png?text=Jersey+Crewneck+Tee+Black+3"
+      "http://localhost:8080/images/1.jpg",
+      "http://localhost:8080/images/2.jpg",
+      "http://localhost:8080/images/3.jpg",
+      "http://localhost:8080/images/4.jpg"
     ],
     "category": "Men's Tops",
     "sizes": [
       {
         "size": "S",
-        "quantity": 20
+        "quantity": 5
       },
       {
         "size": "M",
-        "quantity": 20
+        "quantity": 10
       },
       {
         "size": "L",
-        "quantity": 20
+        "quantity": 15
       },
       {
         "size": "XL",
@@ -32,28 +33,29 @@
   },
   {
     "id": 2,
-    "name": "Jersey Crewneck Tee",
-    "description": "The Essentials Tee is made from core 100% cotton jersey. The rib-knit crewneck tee fits relaxed in the body with dropped shoulders. The \"Fear of God Essentials\" collegiate graphic is screen printed on the center front, and Essentials Fear of God rubberized label is at the back collar.",
-    "price": 2175,
-    "color": "DARK HEATHER",
+    "name": "Eternal Merino Knit Hoodie",
+    "description": "The Eternal Knit Hoodie is knitted in Italy from 100% merino wool, and detailed with a jacquard \"ETERNAL\" logo. The designed volume in the body and sleeves to creates a round silhouette. The hood, rib-knit cuffs, and waist hem frame the piece. A Fear of God label is stitched on the hood.",
+    "price": 7363,
+    "color": "Heather Beige",
     "imageUrls": [
-      "https://via.placeholder.com/300x400.png?text=Jersey+Crewneck+Tee+Dark+Heather+1",
-      "https://via.placeholder.com/300x400.png?text=Jersey+Crewneck+Tee+Dark+Heather+2",
-      "https://via.placeholder.com/300x400.png?text=Jersey+Crewneck+Tee+Dark+Heather+3"
+      "http://localhost:8080/images/5.jpg",
+      "http://localhost:8080/images/6.jpg",
+      "http://localhost:8080/images/7.jpg",
+      "http://localhost:8080/images/8.jpg"
     ],
     "category": "Men's Tops",
     "sizes": [
       {
         "size": "S",
-        "quantity": 20
+        "quantity": 5
       },
       {
         "size": "M",
-        "quantity": 20
+        "quantity": 10
       },
       {
         "size": "L",
-        "quantity": 20
+        "quantity": 15
       },
       {
         "size": "XL",
@@ -63,28 +65,29 @@
   },
   {
     "id": 3,
-    "name": "Jersey Crewneck Tee",
-    "description": "The Essentials Tee is made from core 100% cotton jersey. The rib-knit crewneck tee fits relaxed in the body with dropped shoulders. The \"Fear of God Essentials\" collegiate graphic is screen printed on the center front, and Essentials Fear of God rubberized label is at the back collar.",
-    "price": 2175,
-    "color": "MILITARY",
+    "name": "Fine Knit Henley Tee",
+    "description": "The Eternal Knit Henley Tee is crafted in Italy from 100% extra-fine baby merino wool. This contemporary henley features relaxed proportions, with dropped shoulders and 3/4 sleeves. Its henley placket design enhances the clean, modern aesthetic. A Fear of God label is stitched at the back collar.",
+    "price": 3960,
+    "color": "Black",
     "imageUrls": [
-      "https://via.placeholder.com/300x400.png?text=Jersey+Crewneck+Tee+Military+1",
-      "https://via.placeholder.com/300x400.png?text=Jersey+Crewneck+Tee+Military+2",
-      "https://via.placeholder.com/300x400.png?text=Jersey+Crewneck+Tee+Military+3"
+      "http://localhost:8080/images/9.jpg",
+      "http://localhost:8080/images/10.jpg",
+      "http://localhost:8080/images/11.jpg",
+      "http://localhost:8080/images/12.jpg"
     ],
     "category": "Men's Tops",
     "sizes": [
       {
         "size": "S",
-        "quantity": 20
+        "quantity": 5
       },
       {
         "size": "M",
-        "quantity": 20
+        "quantity": 10
       },
       {
         "size": "L",
-        "quantity": 20
+        "quantity": 15
       },
       {
         "size": "XL",
@@ -94,28 +97,29 @@
   },
   {
     "id": 4,
-    "name": "Fleece Hoodie",
-    "description": "The Essentials Fleece Hoodie has been upgraded in a heavier 480gsm core fleece to provide additional body and structure. A collegiate-inspired \"Fear of God Essentials\" graphic is screen printed on the front. Details include an overlapped neckline hoodie, rib-knit cuffs, waist-hem, and side pockets. The Essentials Fear of God rubberized label is at the back collar.",
-    "price": 4707,
-    "color": "BLACK",
+    "name": "Eternal Hoodie",
+    "description": "The Eternal Hoodie is made in Portugal from a heavy cotton blend with an embossed \"ETERNAL\" logo on the front. The signature Fear of God fit is evident with a relaxed silhouette, dropped shoulders, double-layered hood,  rib-knit cuffs and waist hem. Additional details include side pockets, and a Fear of God label is stitched on the hood.",
+    "price": 2189,
+    "color": "Dove Grey",
     "imageUrls": [
-      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Black+1",
-      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Black+2",
-      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Black+3"
+      "http://localhost:8080/images/13.jpg",
+      "http://localhost:8080/images/14.jpg",
+      "http://localhost:8080/images/15.jpg",
+      "http://localhost:8080/images/16.jpg"
     ],
     "category": "Men's Tops",
     "sizes": [
       {
         "size": "S",
-        "quantity": 20
+        "quantity": 5
       },
       {
         "size": "M",
-        "quantity": 20
+        "quantity": 10
       },
       {
         "size": "L",
-        "quantity": 20
+        "quantity": 15
       },
       {
         "size": "XL",
@@ -125,29 +129,28 @@
   },
   {
     "id": 5,
-    "name": "Fleece Hoodie",
-    "description": "The Essentials Fleece Hoodie has been upgraded in a heavier 480gsm core fleece to provide additional body and structure. A collegiate-inspired \"Fear of God Essentials\" graphic is screen printed on the front. Details include an overlapped neckline hoodie, rib-knit cuffs, waist-hem, and side pockets. The Essentials Fear of God rubberized label is at the back collar.",
-    "price": 4707,
-    "color": "DARK HEATHER",
+    "name": "Short Sleeve Oxford Shirt",
+    "description": "The Short Sleeve Oxford Shirt is stitched in Italy from virgin wool-cotton blend with elastane for stretch comfort. The classic Oxford shirt style is remade with a minimalist covered placket with horn buttons.  A Fear of God  label is stitched at the back collar.",
+    "price": 2587,
+    "color": "Melange Dove Grey",
     "imageUrls": [
-      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Dark+Heather+1",
-      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Dark+Heather+2",
-      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Dark+Heather+3",
-      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Dark+Heather+4"
+      "http://localhost:8080/images/17.jpg",
+      "http://localhost:8080/images/18.jpg",
+      "http://localhost:8080/images/19.jpg"
     ],
     "category": "Men's Tops",
     "sizes": [
       {
         "size": "S",
-        "quantity": 20
+        "quantity": 5
       },
       {
         "size": "M",
-        "quantity": 20
+        "quantity": 10
       },
       {
         "size": "L",
-        "quantity": 20
+        "quantity": 15
       },
       {
         "size": "XL",
@@ -157,30 +160,28 @@
   },
   {
     "id": 6,
-    "name": "Fleece Hoodie",
-    "description": "The Essentials Fleece Hoodie has been upgraded in a heavier 480gsm core fleece to provide additional body and structure. A collegiate-inspired \"Fear of God Essentials\" graphic is screen printed on the front. Details include an overlapped neckline hoodie, rib-knit cuffs, waist-hem, and side pockets. The Essentials Fear of God rubberized label is at the back collar.",
-    "price": 4707,
-    "color": "OLIVE",
+    "name": "Denim Button Up Shirt",
+    "description": "The Button Up Shirt is stitched in Italy from a medium indigo denim with a minimalist covered placket with horn buttons. A Fear of God label is stitched at the back collar.",
+    "price": 2368,
+    "color": "Medium Indigo",
     "imageUrls": [
-      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Olive+1",
-      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Olive+2",
-      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Olive+3",
-      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Olive+4",
-      "https://via.placeholder.com/300x400.png?text=Fleece+Hoodie+Olive+5"
+      "http://localhost:8080/images/20.jpg",
+      "http://localhost:8080/images/21.jpg",
+      "http://localhost:8080/images/22.jpg"
     ],
     "category": "Men's Tops",
     "sizes": [
       {
         "size": "S",
-        "quantity": 20
+        "quantity": 5
       },
       {
         "size": "M",
-        "quantity": 20
+        "quantity": 10
       },
       {
         "size": "L",
-        "quantity": 20
+        "quantity": 15
       },
       {
         "size": "XL",
@@ -190,27 +191,29 @@
   },
   {
     "id": 7,
-    "name": "Jersey Long Sleeve Tee",
-    "description": "The Essentials Long Sleeve Tee is made from core 100% cotton jersey. The crewneck tee fits relaxed in the body with dropped shoulders, and rib-knit cuffs. The \"Fear of God Essentials\" collegiate graphic is screen printed on the center front, and the Essentials Fear of God rubberized label is at the back collar.",
-    "price": 2354,
-    "color": "BLACK",
+    "name": "Wool Cashmere Overshirt",
+    "description": "The Overshirt is made in Italy from a blend of wool-cashmere, giving a luxurious texture with versatile style. The double-layered piece features the brand's signature elements such as a relaxed fit with dropped shoulders. Additional details include point collar, front metal snap placket, and Fear of God  label is stitched at the back collar.",
+    "price": 5970,
+    "color": "Black",
     "imageUrls": [
-      "https://via.placeholder.com/300x400.png?text=Jersey+Long+Sleeve+Tee+Black+1",
-      "https://via.placeholder.com/300x400.png?text=Jersey+Long+Sleeve+Tee+Black+2"
+      "http://localhost:8080/images/23.jpg",
+      "http://localhost:8080/images/24.jpg",
+      "http://localhost:8080/images/25.jpg",
+      "http://localhost:8080/images/26.jpg"
     ],
     "category": "Men's Tops",
     "sizes": [
       {
         "size": "S",
-        "quantity": 20
+        "quantity": 5
       },
       {
         "size": "M",
-        "quantity": 20
+        "quantity": 10
       },
       {
         "size": "L",
-        "quantity": 20
+        "quantity": 15
       },
       {
         "size": "XL",
@@ -220,27 +223,29 @@
   },
   {
     "id": 8,
-    "name": "Cargo Pants",
-    "description": "Essentials Cargo Pants feature a relaxed fit with a durable cotton fabric. Designed with side pockets and a rubberized label at the waist, they offer comfort and utility for daily wear.",
-    "price": 2985,
-    "color": "NAVY",
+    "name": "Printed Jersey Lounge Tee",
+    "description": "The Printed Jersey Tee is made from a 100% cotton jersey for lounge comfort. A stacked \"LOUNGE FEAR OF GOD\" logo is on the front, while a Fear of God label is stitched at the back collar.",
+    "price": 1762,
+    "color": "White",
     "imageUrls": [
-      "https://via.placeholder.com/300x400.png?text=Cargo+Pants+Navy+1",
-      "https://via.placeholder.com/300x400.png?text=Cargo+Pants+Navy+2"
+      "http://localhost:8080/images/27.jpg",
+      "http://localhost:8080/images/28.jpg",
+      "http://localhost:8080/images/29.jpg",
+      "http://localhost:8080/images/30.jpg"
     ],
     "category": "Men's Bottoms",
     "sizes": [
       {
         "size": "S",
-        "quantity": 20
+        "quantity": 5
       },
       {
         "size": "M",
-        "quantity": 20
+        "quantity": 10
       },
       {
         "size": "L",
-        "quantity": 20
+        "quantity": 15
       },
       {
         "size": "XL",
@@ -250,27 +255,29 @@
   },
   {
     "id": 9,
-    "name": "Slim Fit Jeans",
-    "description": "Slim Fit Jeans are designed for a streamlined look, crafted from high-quality denim with a touch of stretch for all-day comfort. They feature five pockets, a zip fly, and a leather patch on the waistband.",
-    "price": 3205,
-    "color": "DENIM",
+    "name": "Merino Full Zip Sweater",
+    "description": "Made in Italy, the Full Zip Sweater is knitted from a heavy merino wool, and detailed with a jacquard \"F\" on each sleeve. The design features a full front zip with volume in the body and sleeves for pronounced drape. A Fear of God leather label is stitched at the back collar.",
+    "price": 8557,
+    "color": "Melange Black",
     "imageUrls": [
-      "https://via.placeholder.com/300x400.png?text=Slim+Fit+Jeans+Denim+1",
-      "https://via.placeholder.com/300x400.png?text=Slim+Fit+Jeans+Denim+2"
+      "http://localhost:8080/images/31.jpg",
+      "http://localhost:8080/images/32.jpg",
+      "http://localhost:8080/images/33.jpg",
+      "http://localhost:8080/images/34.jpg"
     ],
     "category": "Men's Bottoms",
     "sizes": [
       {
         "size": "S",
-        "quantity": 20
+        "quantity": 5
       },
       {
         "size": "M",
-        "quantity": 20
+        "quantity": 10
       },
       {
         "size": "L",
-        "quantity": 20
+        "quantity": 15
       },
       {
         "size": "XL",
