@@ -1,0 +1,41 @@
+services:
+  app:
+    build: .
+    # image: my-spring-app  
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/mydb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: ""
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      # 1. 允許 root 空密碼
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+      # 2. 自動建立的資料庫
+      MYSQL_DATABASE: mydb
+      # 3. 另外再建立一個 user，也用空密碼
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: ""        # ← 空字串就是空密碼
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+
+volumes:
+  db_data:
