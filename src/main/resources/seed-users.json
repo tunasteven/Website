@@ -1,0 +1,62 @@
+[
+  {
+    "username": "johndoe",
+    "email": "johndoe@example.com",
+    "password": "password123",
+    "phone": "0912345678",
+    "birthdate": "1990-05-12",
+    "title": "MR",
+    "city": "台北市",
+    "address": "信義區松仁路100號",
+    "enabled": true,
+    "roles": ["USER"]
+  },
+  {
+    "username": "janedoe",
+    "email": "janedoe@example.com",
+    "password": "password123",
+    "phone": "0987654321",
+    "birthdate": "1992-11-03",
+    "title": "MS",
+    "city": "新北市",
+    "address": "板橋區文化路200巷5弄3號",
+    "enabled": true,
+    "roles": ["USER"]
+  },
+  {
+    "username": "admin",
+    "email": "admin@example.com",
+    "password": "Admin!234",
+    "phone": "0922333444",
+    "birthdate": "1985-01-20",
+    "title": "MR",
+    "city": "台中市",
+    "address": "西屯區中港路300號",
+    "enabled": true,
+    "roles": ["ADMIN", "USER"]
+  },
+  {
+    "username": "testuser",
+    "email": "testuser@example.com",
+    "password": "testpass",
+    "phone": "0933111222",
+    "birthdate": "2000-07-15",
+    "title": "OTHER",
+    "city": "高雄市",
+    "address": "鼓山區美術東二路12號",
+    "enabled": false,
+    "roles": ["USER"]
+  },
+  {
+    "username": "alicechen",
+    "email": "alice.chen@example.com",
+    "password": "alice2024",
+    "phone": "0900123456",
+    "birthdate": "1996-03-08",
+    "title": "MS",
+    "city": "台南市",
+    "address": "東區中華東路一段45號",
+    "enabled": true,
+    "roles": ["USER"]
+  }
+]
