@@ -44,7 +44,7 @@ public class SecurityConfig {
                         authorizeRequests
                                 .requestMatchers("/auth/**").permitAll()
                                 .requestMatchers("/api/admin/**").hasRole("ADMIN")
-                                .requestMatchers("/api/user/**").hasAnyRole("USER", "ADMIN")
+                                .requestMatchers("/api/user/**").authenticated()
                                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                                 .requestMatchers("/auth/register").permitAll()
                                 .requestMatchers("/images/**").permitAll() // ✅ 放行圖片
