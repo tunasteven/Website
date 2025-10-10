@@ -47,6 +47,7 @@ public class SecurityConfig {
                                 .requestMatchers("/api/user/**").authenticated()
                                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                                 .requestMatchers("/auth/register").permitAll()
+                                .requestMatchers("/actuator/health").permitAll() // 允許匿名訪問
                                 .requestMatchers("/images/**").permitAll() // ✅ 放行圖片
                                 .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll() //swagger
                                 .anyRequest().authenticated()
